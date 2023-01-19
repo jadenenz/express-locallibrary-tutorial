@@ -12,6 +12,7 @@ var usersRouter = require("./routes/users")
 const catalogRouter = require("./routes/catalog")
 
 var app = express()
+const port = process.env.PORT || 5000
 
 app.use(helmet())
 
@@ -57,6 +58,6 @@ app.use(function (err, req, res, next) {
   res.render("error")
 })
 
-app.listen(process.env.PORT || 5000)
+app.listen(port)
 
 module.exports = app
