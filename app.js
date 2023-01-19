@@ -1,3 +1,4 @@
+require("dotenv").config()
 const compression = require("compression")
 const helmet = require("helmet")
 var createError = require("http-errors")
@@ -16,8 +17,7 @@ app.use(helmet())
 
 //Set up a mongoose connection
 const mongoose = require("mongoose")
-const dev_db_url =
-  "mongodb+srv://jadenenz:charlene21960072@cluster0.acxdkgl.mongodb.net/?retryWrites=true&w=majority"
+const dev_db_url = ""
 const mongoDB = process.env.MONGODB_URI || dev_db_url
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true })
 
